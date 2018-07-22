@@ -5,9 +5,18 @@
         <title>Chat App</title>
     </head>
     <body>
-        <h1>Welcome to Chat App</h1>
+        <h3>Welcome to Chat App</h3>
+
+        <ol id="messages"></ol>
+
+        <form id="message-form">
+            <input name="message" type="text" />
+            <button type="submit">Send</button>
+        </form>
+        <button id="send-location">Send Location</button>
 
         <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/libs/jquery-3.3.1.min.js"></script>
         <script src="/js/script.js"></script>
     </body>
 </html>

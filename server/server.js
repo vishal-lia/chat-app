@@ -3,7 +3,7 @@ const http = require('http');
 const socketIO = require('socket.io');
 const express = require('express');
 
-const { generateMessage } = require('./utils/message');
+const { generateMessage, generateLocationMessage } = require('./utils/message');
 
 const app = express();
 
@@ -21,9 +21,14 @@ io.on('connection', socket => {
 
     socket.broadcast.emit('newMessage', generateMessage('Admin', 'New User Joined'));
 
-    socket.on('createMessage', message => {
+    socket.on('createMessage', (message, callback) => {
         console.log('Create message:', message);
         io.emit('newMessage', generateMessage(message.from, message.text));
+        callback('This is from server..');
+    });
+
+    socket.on('createLocationMessage', message => {
+        io.emit('newLocationMessage', generateLocationMessage('Admin', message.latitude, message.longitude));
     });
 
     socket.on('disconnect', () => {
