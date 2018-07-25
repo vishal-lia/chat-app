@@ -1,0 +1,97 @@
+/************** GENERAL ***************/
+/**************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.clearfix {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+h3 {
+    color: rgb(238, 235, 235);
+    font-size: 140%;
+    font-weight: 400;
+}
+
+ol li { list-style-type: none; }
+
+/************** CONTAINER **************/
+/***************************************/
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-panel {
+    width: 17%;
+    height: 100%;
+    background-color: #53486d;
+    float: left;
+    padding: 20px;
+}
+
+.right-panel {
+    width: 83%;
+    height: 100%;
+    background-color: #fff;
+    float: left;
+    padding: 25px;
+    position: relative;
+}
+
+.message-panel {
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#message-form button,
+#message-form input,
+#send-location
+{
+    height: 42px;
+    border: 1px solid #585252;
+    border-radius: 5px; 
+    font-size: 90%;
+    color: #2e2346;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#message-form { float: left; }
+
+#message-form input { width: 800px; }
+#message-form input:focus { outline: none; }
+
+#message-form button {
+    width: 100px;
+    margin-left: 3px;
+    background-color: #e7e7e7;
+}
+
+#send-location {
+    float: left;
+    width: 120px;
+    margin-left: 6px;
+    background-color: #e7e7e7;
+}
+
+#message-form button:hover,
+#send-location:hover {
+    cursor: pointer;
+    background-color: #53486d;
+    color: #fff;
+}
