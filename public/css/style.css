@@ -24,8 +24,6 @@ h3 {
     font-weight: 400;
 }
 
-ol li { list-style-type: none; }
-
 /************** CONTAINER **************/
 /***************************************/
 .container {
@@ -46,7 +44,7 @@ ol li { list-style-type: none; }
     height: 100%;
     background-color: #fff;
     float: left;
-    padding: 25px;
+    padding: 15px;
     position: relative;
 }
 
@@ -57,6 +55,27 @@ ol li { list-style-type: none; }
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
+}
+
+.message { 
+    list-style-type: none;
+    padding: 8px;
+}
+
+.message__title { padding-bottom: 3px; }
+
+.message__title h4 {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.message__title span {
+    opacity: 0.5;
+    font-size: 90%;
+}
+
+.message__body p {
+    font-weight: 300;
 }
 
 #message-form button,
@@ -73,7 +92,10 @@ ol li { list-style-type: none; }
 
 #message-form { float: left; }
 
-#message-form input { width: 800px; }
+#message-form input { 
+    width: 800px;
+    padding: 10px; 
+}
 #message-form input:focus { outline: none; }
 
 #message-form button {
