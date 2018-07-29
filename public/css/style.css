@@ -27,34 +27,47 @@ h3 {
 /************** CONTAINER **************/
 /***************************************/
 .container {
+    display: flex;
     width: 100vw;
     height: 100vh;
 }
 
 .left-panel {
     width: 17%;
-    height: 100%;
+    height: 100vh;
     background-color: #53486d;
     float: left;
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .right-panel {
+    height: 100vh;
     width: 83%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     float: left;
     padding: 15px;
-    position: relative;
+}
+
+
+.chat-messages { 
+    flex-grow: 1;
+    overflow-y: scroll; 
 }
 
 .message-panel {
-    position: absolute;
-    bottom: 0;
-    left: -1px;
+    margin-left: -10px;
+    margin-bottom: -7px;
     width: 100%;
     padding: 8px;
-    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.message-panel form {
+    flex-grow: 1;
+    display: flex;
 }
 
 .message { 
