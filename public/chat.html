@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link href="/css/style.css" type="text/css" rel="stylesheet" />
+        <title>Chat | ChatApp</title>
+    </head>
+    <body>
+        <div class="container clearfix">
+            <div class="left-panel">
+                <h2>Participants</h2>
+                <hr>
+            </div>
+            <div class="right-panel">
+                <div class="chat-messages">
+                    <ol id="messages"></ol>
+                </div>
+                
+                <div class="message-panel">
+                    <form id="message-form">
+                        <input name="message" type="text" placeholder="Type a message" autofocus autocomplete="off"/>
+                        <button type="submit">Send</button>
+                    </form>
+                    <button id="send-location">Send location</button>
+                </div>
+
+            </div>
+        </div>
+
+        <script id="message-template" type="text/template">
+            <li class="message">
+                <div class="message__title">
+                    <h4>{{from}}</h4>
+                    <span>{{createdAt}}</span>
+                </div>
+                <div class="message__body">
+                    <p>{{text}}</p>
+                </div>
+            </li>
+        </script>
+
+        <script id="location-template" type="text/template">
+            <li class="message">
+                <div class="message__title">
+                    <h4>{{from}}</h4>
+                    <span>{{createdAt}}</span>
+                </div>
+                <div class="message__body">
+                    <p>
+                        <a href="{{url}}" target="_blank">My current location</a>
+                    </p>
+                </div>
+            </li>
+        </script>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/libs/jquery-3.3.1.min.js"></script>
+        <script src="/js/libs/moment.min.js"></script>
+        <script src="/js/libs/mustache.min.js"></script>
+        <script src="/js/chat.js"></script>
+    </body>
+</html>

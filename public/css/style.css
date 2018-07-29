@@ -4,9 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     font-weight: 300;
@@ -18,12 +15,69 @@ body {
     display: table;
 }
 
-h3 {
-    color: rgb(238, 235, 235);
-    font-size: 140%;
-    font-weight: 400;
+h2 {
+    color: #eeebeb;
+    font-size: 150%;
+    font-weight: 500;
 }
 
+input:focus,
+button:focus { outline: none; }
+
+/************** JOIN FORM **************/
+/***************************************/
+.join-form {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(125deg, #3a2c5a, #887ca1);
+}
+
+.center-content {
+    background-color: #e2e2e2;
+    box-shadow: 0 2px 2px #888888;
+    border-radius: 5px;
+    height: 300px;
+    width: 250px;
+    margin: auto;
+    transform: translateY(60%);
+    padding: 10px;
+}
+
+.form-field { padding: 10px; }
+
+.form-field h3 {
+    font-size: 140%;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+}
+
+.form-field input {
+    margin-top: 8px;
+    padding: 5px;
+    width: 210px;
+    height: 30px;
+    border: 1px solid #585252;
+    border-radius: 5px; 
+    color: #2e2346;
+}
+
+.form-field button {
+    width: 210px;
+    height: 35px;
+    background-color: #736299;
+    box-shadow: 0 2px 2px #888888;
+    color: #fff;
+    border: 1px solid #585252;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-field button:hover,
+.form-field button:active {
+    background-color: #53486d;
+}
 /************** CONTAINER **************/
 /***************************************/
 .container {
@@ -80,10 +134,11 @@ h3 {
 .message__title h4 {
     display: inline-block;
     margin-right: 10px;
+    font-weight: 500;
 }
 
 .message__title span {
-    opacity: 0.5;
+    opacity: 0.6;
     font-size: 90%;
 }
 
@@ -99,9 +154,11 @@ h3 {
     border: 1px solid #585252;
     border-radius: 5px; 
     font-size: 90%;
-    color: #2e2346;
-    transition: background-color 0.3s, color 0.3s;
 }
+
+#message-form button,
+#send-location
+{ transition: background-color 0.3s, color 0.3s; }
 
 #message-form { float: left; }
 
@@ -109,7 +166,6 @@ h3 {
     width: 800px;
     padding: 10px; 
 }
-#message-form input:focus { outline: none; }
 
 #message-form button {
     width: 100px;
