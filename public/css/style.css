@@ -21,6 +21,8 @@ h2 {
     font-weight: 500;
 }
 
+hr { margin-bottom: 25px; }
+
 input:focus,
 button:focus { outline: none; }
 
@@ -105,6 +107,13 @@ button:focus { outline: none; }
     padding: 15px;
 }
 
+#users li {
+    font-size: 120%;
+    font-weight: 400;
+    color: #e7e7e7;
+    padding: 10px 3px 0 3px;
+    margin-left: 20px;
+}
 
 .chat-messages { 
     flex-grow: 1;
