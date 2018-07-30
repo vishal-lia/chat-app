@@ -19,8 +19,6 @@ const io = socketIO(server);
 let users = new Users();
 
 io.on('connection', socket => {
-    console.log('New User connected');
-
     socket.on('join', (params, callback) => {
         if(!isValidString(params.name) || !isValidString(params.room)) {
             return callback('Need both User name and Room name');
@@ -38,18 +36,24 @@ io.on('connection', socket => {
     });
 
     socket.on('createMessage', (message, callback) => {
-        console.log('Create message:', message);
-        io.emit('newMessage', generateMessage(message.from, message.text));
+        let user = users.getUser(socket.id);
+
+        if(user && isValidString(message.text)) {
+            io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));
+        }
+
         callback();
     });
 
     socket.on('createLocationMessage', message => {
-        io.emit('newLocationMessage', generateLocationMessage('Admin', message.latitude, message.longitude));
+        let user = users.getUser(socket.id);
+
+        if(user) {
+            io.to(user.room).emit('newLocationMessage', generateLocationMessage(user.name, message.latitude, message.longitude));
+        }
     });
 
     socket.on('disconnect', () => {
-        console.log('User disconnected');
-
         let user = users.removeUser(socket.id);
 
         if(user) {
