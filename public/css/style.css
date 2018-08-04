@@ -84,15 +84,12 @@ button:focus { outline: none; }
 /***************************************/
 .container {
     display: flex;
-    width: 100vw;
-    height: 100vh;
 }
 
 .left-panel {
     width: 17%;
     height: 100vh;
     background-color: #53486d;
-    float: left;
     padding: 20px;
     overflow-y: scroll;
 }
@@ -103,7 +100,6 @@ button:focus { outline: none; }
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    float: left;
     padding: 15px;
 }
 
@@ -125,6 +121,7 @@ button:focus { outline: none; }
     margin-bottom: -7px;
     width: 100%;
     padding: 8px;
+    display: flex;
     flex-shrink: 0;
 }
 
@@ -138,10 +135,12 @@ button:focus { outline: none; }
     padding: 8px;
 }
 
-.message__title { padding-bottom: 3px; }
+.message__title { 
+    display: flex;
+    padding-bottom: 3px; 
+}
 
 .message__title h4 {
-    display: inline-block;
     margin-right: 10px;
     font-weight: 500;
 }
@@ -159,7 +158,6 @@ button:focus { outline: none; }
 #message-form input,
 #send-location
 {
-    height: 42px;
     border: 1px solid #585252;
     border-radius: 5px; 
     font-size: 90%;
@@ -169,7 +167,6 @@ button:focus { outline: none; }
 #send-location
 { transition: background-color 0.3s, color 0.3s; }
 
-#message-form { float: left; }
 
 #message-form input { 
     width: 800px;
@@ -183,7 +180,6 @@ button:focus { outline: none; }
 }
 
 #send-location {
-    float: left;
     width: 120px;
     margin-left: 6px;
     background-color: #e7e7e7;

@@ -2,19 +2,19 @@ const socket = io();
 
 function scrollToBottom() {
     // Selectors
+    let chatMessages = $('.chat-messages');
     let messages = $('#messages');
     let newMessage = messages.children('li:last-child');
 
     // Heights
-    let scrollTop = messages.prop('scrollTop');
-    let clientHeight = messages.prop('clientHeight');
-    let scrollHeight = messages.prop('scrollHeight');
+    let scrollTop = chatMessages.prop('scrollTop');
+    let clientHeight = chatMessages.prop('clientHeight');
+    let scrollHeight = chatMessages.prop('scrollHeight');
     let newMessageHeight = newMessage.innerHeight();
     let lastMessageHeight = newMessage.prev().innerHeight();
 
-    //console.log('DEBUG: ', scrollTop, clientHeight, scrollHeight, newMessageHeight, lastMessageHeight);
     if(scrollTop + clientHeight + lastMessageHeight + newMessageHeight >= scrollHeight) {
-        messages.scrollTop(scrollHeight);
+        chatMessages.scrollTop(scrollHeight);
     }
 }
 
@@ -24,8 +24,6 @@ socket.on('connect', () => {
         if(err) {
             alert(err);
             window.location.href = '/';
-        } else {
-            console.log('No error.');
         }
     });
 });
