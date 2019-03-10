@@ -64,7 +64,8 @@ button:focus { outline: none; }
     color: #2e2346;
 }
 
-.form-field button {
+.form-field button,
+.video-call {
     width: 210px;
     height: 35px;
     background-color: #736299;
@@ -79,6 +80,19 @@ button:focus { outline: none; }
 .form-field button:hover,
 .form-field button:active {
     background-color: #53486d;
+}
+
+.video-call {
+    appearance: button;
+    text-decoration: none;
+    color: #fff;
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    padding: 5px 10px;
+    margin: 10px;
+    width: 150px;
+    text-align: center;
 }
 /************** CONTAINER **************/
 /***************************************/
@@ -190,4 +204,47 @@ button:focus { outline: none; }
     cursor: pointer;
     background-color: #53486d;
     color: #fff;
+}
+
+/************** VIDEO CHAT **************/
+/***************************************/
+
+.buttons {
+    text-align: center;
+    margin: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 25px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 120%;
+    color: #fff;
+}
+
+#call {
+    background-color: rgb(84, 84, 250);
+}
+
+#hangup {
+    background-color: rgb(226, 69, 69);
+}
+
+#remote-video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+    height: 500px;
+    border-radius: 5px;
+}
+
+#local-video {
+    position: fixed;
+    width: 200px;
+    height: 150px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 5px;
 }

@@ -7,12 +7,13 @@ function scrollToBottom() {
     let newMessage = messages.children('li:last-child');
 
     // Heights
-    let scrollTop = chatMessages.prop('scrollTop');
-    let clientHeight = chatMessages.prop('clientHeight');
-    let scrollHeight = chatMessages.prop('scrollHeight');
-    let newMessageHeight = newMessage.innerHeight();
+    let scrollTop = chatMessages.prop('scrollTop');         // Height from top to start of scroll bar
+    let clientHeight = chatMessages.prop('clientHeight');   // Browser single page height
+    let scrollHeight = chatMessages.prop('scrollHeight');   // Total height of whole page with multiple scrolls
+    let newMessageHeight = newMessage.innerHeight();        // Height of a div with padding and border
     let lastMessageHeight = newMessage.prev().innerHeight();
 
+    // If sroll bar is at bottom, scroll to bottom on next message, else don't scroll
     if(scrollTop + clientHeight + lastMessageHeight + newMessageHeight >= scrollHeight) {
         chatMessages.scrollTop(scrollHeight);
     }
@@ -102,3 +103,5 @@ locationButton.on('click', () => {
         alert('Unable to fetch location');
     });
 });
+
+export { socket };

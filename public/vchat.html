@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/style.css" type="text/css" rel="stylesheet" />
+        <title>Video Chat</title>
+    </head>
+    <body>
+        <div class="buttons">
+            <button type="submit" class="btn" id="call">Call</button>
+            <button type="submit" class="btn" id="hangup">Hangup</button>
+        </div>
+        
+        <video autoplay muted id="remote-video"></video>
+        <video autoplay muted id="local-video"></video>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script  type="module" src="/js/vchat.js"></script>
+    </body>
+</html>
+

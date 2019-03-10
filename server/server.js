@@ -53,6 +53,10 @@ io.on('connection', socket => {
         }
     });
 
+    socket.on('signal', (msg) => {
+        socket.broadcast.emit('signal', msg);
+    });
+
     socket.on('disconnect', () => {
         let user = users.removeUser(socket.id);
 
