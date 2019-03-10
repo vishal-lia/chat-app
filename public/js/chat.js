@@ -103,5 +103,3 @@ locationButton.on('click', () => {
         alert('Unable to fetch location');
     });
 });
-
-export { socket };
